@@ -1,0 +1,12 @@
+{
+  "name": "lastminute-assignment",
+  "version": "0.0.1",
+  "devDependencies": {
+    "http-server": "*",
+    "karma": "^0.12.16",
+    "karma-mocha": "^0.1.3",
+    "karma-sinon-chai": "^0.1.5",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "protractor": "^0.22.0"
+  }
+}

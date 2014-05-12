@@ -1,0 +1,28 @@
+{
+    "hotels": [
+        {
+            "name": "Hotel Sunny Palms",
+            "imgUrl": "imgs/sunny.jpg",
+            "rating": 5,
+            "price": 108.00
+        },
+        {
+            "name": "Hotel Snowy Mountains",
+            "imgUrl": "imgs/snowy.jpg",
+            "rating": 4,
+            "price": 120.00
+        },
+        {
+            "name": "Hotel Windy Sails",
+            "imgUrl": "imgs/windy.jpg",
+            "rating": 3,
+            "price": 110.00
+        },
+        {
+            "name": "Hotel Middle of Nowhere",
+            "imgUrl": "imgs/nowhere.jpg",
+            "rating": 4,
+            "price": 199.00
+        }
+    ]
+}
