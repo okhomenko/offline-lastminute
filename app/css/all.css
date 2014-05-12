@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+}
+
+.block {
+  display: block;
+}
+
+.logo {
+  width: 100%;
+  padding: .5em 0;
+  text-align: center;
+}
+
+.bg-logo {
+  background-color: #EC008C;
+}
+
+@media only screen and (max-width: 640px) {
+
+  .logo {
+    padding: .3em 0;
+  }
+
+}
+
+@media only screen and (min-width: 640px) {
+
+}
