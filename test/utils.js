@@ -36,10 +36,16 @@ describe('ajax', function () {
         requests[0].url.should.equal(url);
     });
 
-    it('should call callback with response', function () {
+    it('should call success callback with response', function () {
         ajax(url, success);
         requests[0].respond(200, {}, '[]');
         success.should.have.been.calledWith('[]');
+    });
+
+    it('should call error callback with response', function () {
+        ajax(url, success, error);
+        requests[0].respond(500, {}, 'Error occured');
+        error.should.have.been.calledWith('Error occured');
     });
 
     it('should parse response if Content-Type: application/json', function () {
