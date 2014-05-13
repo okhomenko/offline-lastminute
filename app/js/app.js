@@ -60,8 +60,7 @@
                 descTmplDOM.innerHTML = descTmpl;
             }
 
-            // do not need .cloneNode() as we always work with the same instance
-            return descTmplDOM;
+            return descTmplDOM.cloneNode(true);
         };
     }());
 
