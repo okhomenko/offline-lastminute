@@ -3,14 +3,38 @@
 
 describe('Collection', function () {
     'use strict';
-    var Collection;
+    var xhr, requests, Collection, cb;
 
     beforeEach(function () {
-        Collection = window.Collection;
+        Collection = window.LMN.Collection;
+
+        xhr = sinon.useFakeXMLHttpRequest();
+        requests = [];
+        xhr.onCreate = function (xhr) {
+            requests.push(xhr);
+        };
+        cb = sinon.spy();
     });
 
-    it('should fetch via ajax');
+    afterEach(function () {
+        xhr.restore();
+    });
 
-    it('should call callback on success');
+    it('should fetch via ajax', function () {
+        var collection = new Collection({
+            url: 'url'
+        });
+        collection.fetch();
+        requests[0].url.should.equal('url');
+    });
+
+    it('should call callback on success', function () {
+        var collection = new Collection({
+            url: 'url'
+        });
+        collection.fetch(cb);
+        requests[0].respond(200, {'Content-Type': 'application/json'}, '[]');
+        cb.should.have.been.calledWith([]);
+    });
 
 });

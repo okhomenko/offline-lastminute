@@ -15,7 +15,7 @@ describe('ajax', function () {
     });
 
     beforeEach(function () {
-        ajax = window.ajax;
+        ajax = window.LMN.ajax;
 
         url = 'valid url';
         success = sinon.spy();
@@ -52,6 +52,12 @@ describe('ajax', function () {
         ajax(url, success);
         requests[0].respond(200, {'Content-Type': 'application/json'}, '[]');
         success.should.have.been.calledWith([]);
+    });
+
+    it('should parse response if ext is .json', function () {
+        ajax(url + '.json', success);
+        requests[0].respond(200, {}, '{}');
+        success.should.have.been.calledWith({});
     });
 
 });
