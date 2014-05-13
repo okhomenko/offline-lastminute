@@ -113,4 +113,10 @@
 
     fetch();
 
+    global.app = {};
+    global.app.hotelView = {
+        populate: fetch,
+        activate: activateHotel
+    };
+
 }(window, window.LMN));
