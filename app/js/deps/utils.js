@@ -1,28 +1,6 @@
 (function (LMN) {
     'use strict';
 
-    function extend(Parent, childProto) {
-        function Sur() {}
-        Sur.prototype = Parent.prototype;
-
-        function Child() {
-            if (typeof this.initialize === 'function') {
-                this.initialize.apply(this, arguments);
-            }
-        }
-        Child.prototype = new Sur();
-        Child.prototype.contstructor = Child;
-        Child.prototype.__super__ = Parent.prototype;
-
-        for (var prop in childProto) {
-            if (childProto.hasOwnProperty(prop)) {
-                Child.prototype[prop] = childProto[prop];
-            }
-        }
-
-        return Child;
-    }
-
     function noop() {}
 
     function parseResponse(obj) {
@@ -61,5 +39,4 @@
     }
 
     LMN.ajax = ajax;
-    LMN.extend = extend;
 }(window.LMN));

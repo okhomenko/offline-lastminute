@@ -13,12 +13,31 @@
         <div class='lmn-hotels'></div>
     </aside>
 
-    <section class='lmn-description-view description col6'></section>
+    <section class='description col6'>
+        <div class="lmn-description-view"></div>
+    </section>
 </div>
+
+<script type="text/template" id="description-template">
+
+    <div class="description-view">
+    <div class="col2 col1-mob">
+        <img class=imgUrl />
+    </div>
+
+    <div class="col8 col3-mob">
+        <span class=name></span>
+        <span class=rating></span>
+        <div class=price-container>
+            <span class=price></span>
+            <span class=price-info>Total hotel stay</span>
+        </div>
+    </div>
+</div>
+
+</script>
 
 <script src="js/modules.js"></script>
 <script src="js/deps/utils.js"></script>
-<script src="js/deps/collection.js"></script>
-<script src="js/deps/view.js"></script>
 <script src="js/app.js"></script>
 </body></html>
