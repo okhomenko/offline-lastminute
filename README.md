@@ -10,9 +10,4 @@ Functionality:
 - show list of available hotels
 - click on hotel:
   - show hotel description
-  - click again - hide description
   - click on other hotel - hide previous description, show new
-  - change url according to expanded hotel description
-
-Animation:
-- when switching between breakpoints - animation

@@ -11,6 +11,5 @@ unit:
 e2e:
 	./node_modules/.bin/protractor protractor.conf.js --chromeOnly 
 
-
 coverage:
 	./node_modules/karma/bin/karma start karma.conf.js --single-run --reporters coverage --port 9888
