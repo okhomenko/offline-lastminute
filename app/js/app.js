@@ -1,7 +1,7 @@
 (function (global, LMN) {
     'use strict';
 
-    var hotelsEl = document.querySelector('.lmn-view');
+    var hotelsEl = document.querySelector('.lmn-hotels');
 
     var hotels = new LMN.Collection({
         url: 'data/hotels.json'

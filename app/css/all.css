@@ -1,29 +1,141 @@
 body {
-  margin: 0;
+    margin: 0;
+    font-family: Helvetica,Arial,Roboto,sans-serif;
+    font-size: 14px;
+}
+
+[class*="col"] {
+    margin-right: 2%;
+    float: left;
+    box-sizing: border-box;
+}
+
+.col1 { width: 8%; }
+.col2 { width: 18%; }
+.col3 { width: 28%; }
+.col4 { width: 38%; }
+.col5 { width: 48%; }
+.col6 { width: 58%; }
+.col7 { width: 68%; }
+.col8 { width: 78%; }
+.col9 { width: 88%; }
+.col10 { width: 100%; }
+
+.col1-mob { width: 25%; }
+.col2-mob { width: 50%; }
+.col3-mob { width: 75%; }
+.col4-mob { width: 100%; }
+
+[class*="col"] img {
+    width: 100%;
 }
 
 .block {
-  display: block;
+    display: block;
 }
 
 .logo {
-  width: 100%;
-  padding: .5em 0;
-  text-align: center;
+    width: 100%;
+    padding: .5em 0;
+    text-align: center;
 }
 
 .bg-logo {
-  background-color: #EC008C;
+    background: #EC008C;
+}
+
+.container {
+    padding: 1em;
+}
+
+.lmn-hotels .list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    border: 1px solid lightgrey;
+}
+
+.lmn-hotels .item {
+    height: 54px;
+    padding-left: 10px;
+    line-height: 54px;
+    color: #333;
+    background-color: #e2e2e2;
+    background: -webkit-linear-gradient(top, #fefefe 0%, #e2e2e2 100%);
+    border-bottom: 1px solid lightgrey;
+    cursor: pointer;
+}
+
+.description {
+    padding: 1em;
+    background-color: #f5f5f5;
+}
+
+.description {
+    position: relative;
+}
+
+.description-view .name {
+    font-weight: bold;
+    color: #373737;
+    font-size: 90%;
+}
+
+
+.rating {
+    display: block;
+    width: 84px;
+    height: 18px;
+    background-image: url('../imgs/ratings.png');
+}
+.star0 { background-position: 0 0; }
+.star1 { background-position: 0 18px; }
+.star2 { background-position: 0 36px; }
+.star3 { background-position: 0 54px; }
+.star4 { background-position: 0 72px; }
+.star5 { background-position: 0 90px; }
+
+.description-view .price-container {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: block;
+    text-align: right;
+}
+
+.description-view .price {
+    font-weight: bold;
+    font-size: 24px;
+    display: block;
+    color: #f63a84;
+}
+
+.description-view .price-info {
+    font-size: 85%;
+    color: #6b6b6b;
+}
+
+.description-view .price:before {
+    content: '\00a3';
 }
 
 @media only screen and (max-width: 640px) {
 
-  .logo {
-    padding: .3em 0;
-  }
+    .logo {
+        padding: .3em 0;
+    }
 
+    [class*="col"]:not([class*="mob"]) {
+        margin: 0;
+        width: 100%;
+    }
+
+    .container {
+        padding: 0;
+    }
+
+    .lmn-hotels .list {
+        border: none;
+    }
 }
 
-@media only screen and (min-width: 640px) {
-
-}
