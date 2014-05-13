@@ -11,3 +11,7 @@ Functionality:
 - click on hotel:
   - show hotel description
   - click on other hotel - hide previous description, show new
+
+You can refresh list with: `app.views.hotelView.populate()`
+
+Activate from code: `app.views.hotelView.activate(0)`

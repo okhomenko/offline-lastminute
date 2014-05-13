@@ -52,7 +52,7 @@
             }
 
             _this.el.view = _this;
-            cb(_this.el);
+            (cb || noop)(_this.el);
         },
 
         populateOne: function (model) {
@@ -76,7 +76,7 @@
 
                 var hotels = data.hotels;
                 hotels.forEach(_this.populateOne.bind(_this));
-                cb();
+                (cb || noop)();
             });
         },
 
@@ -97,6 +97,7 @@
         },
 
         activate: function (subview) {
+            if (typeof subview === 'number') subview = this._subviews[subview];
             this.deactivate();
             subview.el.classList.add('active');
             this.renderDescription(subview.model);
