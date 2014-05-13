@@ -5,18 +5,27 @@
 
     function noop() {}
 
-    function View() {}
+    var View = extend({}, {
+        initialize: function (opts) {
+            opts = opts || {};
 
-    View.prototype.render = function (cb) {
-        var container = document.createElement('div');
+            for (var opt in opts) {
+                if (opts.hasOwnProperty(opt)) this[opt] = opts[opt];
+            }
 
-        container.innerHTML = this.template;
-        this.el = container.firstChild;
+            return this;
+        },
+        render: function (cb) {
+            var container = document.createElement('div');
 
-        (cb || noop)(this.el);
+            container.innerHTML = this.template;
+            this.el = container.firstChild;
 
-        return this;
-    };
+            (cb || noop)(this.el);
+
+            return this;
+        }
+    });
 
     var ListView = extend(View, {
         template: '<ul class=list></ul>',
@@ -47,8 +56,9 @@
         },
 
         populateOne: function (model) {
-            var _this = this;
-            var view = new this.SubView({ model: model });
+            var _this = this, view;
+
+            view = new this.SubView({ model: model });
             view.render(function (el) {
                 _this.el.appendChild(el);
             });
@@ -70,9 +80,10 @@
             });
         },
 
-        renderDescription: function(model) {
-            var _this = this;
-            var view = new this.DescriptionView({ model: model });
+        renderDescription: function (model) {
+            var _this = this, view;
+
+            view = new this.DescriptionView({ model: model });
 
             view.render(function (el) {
                 _this.descriptionEl.innerHTML = '';

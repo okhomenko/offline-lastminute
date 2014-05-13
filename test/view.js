@@ -8,7 +8,7 @@ describe('View', function () {
 
     beforeEach(function () {
 
-        view = new window.LMN.View({
+        view = new window.LMN.Views.BaseView({
             template: '<ul></ul>'
         });
 
@@ -18,7 +18,7 @@ describe('View', function () {
     describe('@render', function () {
         it('should render template', function () {
             view.render();
-            view.el.tagName.should.equal('UL');
+            view.el.nodeName.should.equal('UL');
         });
 
         it('should exec callback', function () {
