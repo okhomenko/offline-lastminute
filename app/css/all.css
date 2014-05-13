@@ -21,10 +21,10 @@ body {
 .col9 { width: 88%; }
 .col10 { width: 100%; }
 
-.col1-mob { width: 25%; }
-.col2-mob { width: 50%; }
-.col3-mob { width: 75%; }
-.col4-mob { width: 100%; }
+.col1-mob { width: 23%; }
+.col2-mob { width: 48%; }
+.col3-mob { width: 73%; }
+.col4-mob { width: 98%; }
 
 [class*="col"] img {
     width: 100%;
@@ -126,7 +126,6 @@ body {
     }
 
     [class*="col"]:not([class*="mob"]) {
-        margin: 0;
         width: 100%;
     }
 
