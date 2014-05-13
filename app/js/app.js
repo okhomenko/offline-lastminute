@@ -1,4 +1,4 @@
-(function (LMN) {
+(function (global, LMN) {
     'use strict';
 
     var hotelsEl = document.querySelector('.lmn-view');
@@ -7,21 +7,25 @@
         url: 'data/hotels.json'
     });
 
-    var listView = new LMN.Views.ListView();
+    var listView = new LMN.Views.ListView({
+        collection: hotels,
+        autoFetch: true,
+        SubView: LMN.Views.ItemView,
+        DescriptionView: LMN.Views.DescriptionView,
+        descriptionEl: document.querySelector('.lmn-description-view')
+    });
 
     listView.render(function (el) {
         hotelsEl.appendChild(el);
+        el.view.bindAll();
     });
 
-    hotels.fetch(function (data) {
-        var hotels = data.hotels;
-        hotels.forEach(function (hotel) {
-            var view = new LMN.Views.ItemView({ model: hotel });
-            view.render(function (el) {
-                listView.ul.appendChild(el);
-            });
+    global.app = {
 
-        });
-    });
+    };
 
-}(window.LMN));
+    global.app.views = {
+        hotelsView: listView
+    };
+
+}(window, window.LMN));
